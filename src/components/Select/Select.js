@@ -9,10 +9,25 @@ const Select = ({ label, value, onChange, children }) => {
   const displayedValue = getDisplayedValue(value, children);
 
   return (
-    <select value={value} onChange={onChange}>
+    <StyledSelect value={value} onChange={onChange}>
       {children}
-    </select>
+    </StyledSelect>
   );
 };
+
+const StyledSelect = styled.select`
+  color: ${COLORS.gray700};
+  font-size: 1rem;
+  background-color: ${COLORS.transparentGray15};
+  width: min-content;
+  min-width: 0;
+  border-radius: 8px;
+  padding: 10px 16px 12px;
+  appearance: none;
+
+  &:hover {
+    color: ${COLORS.black};
+  }
+`;
 
 export default Select;
